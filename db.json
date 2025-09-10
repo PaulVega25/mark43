@@ -1,0 +1,415 @@
+{
+  "ecosystem": {
+    "title": "Build your ecosystem",
+    "description": "Select from our comprehensive suite of tools and services to build your perfect ecosystem",
+    "categories": [
+      {
+        "id": 1,
+        "name": "Development Tools",
+        "description": "Professional development environment tools",
+        "items": [
+          {
+            "id": 1,
+            "title": "Code Editor Pro",
+            "description": "Advanced code editing with AI assistance",
+            "price": 29.99
+          },
+          {
+            "id": 2,
+            "title": "Version Control Plus",
+            "description": "Enhanced Git management tools",
+            "price": 19.99
+          },
+          {
+            "id": 3,
+            "title": "Code Editor Pro",
+            "description": "Advanced code editing with AI assistance",
+            "price": 29.99
+          },
+          {
+            "id": 4,
+            "title": "Code Editor Pro",
+            "description": "Advanced code editing with AI assistance",
+            "price": 29.99
+          },
+          {
+            "id": 5,
+            "title": "Code Editor Pro",
+            "description": "Advanced code editing with AI assistance",
+            "price": 29.99
+          },
+          {
+            "id": 6,
+            "title": "Code Editor Pro",
+            "description": "Advanced code editing with AI assistance",
+            "price": 29.99
+          },
+          {
+            "id": 7,
+            "title": "Code Editor Pro",
+            "description": "Advanced code editing with AI assistance",
+            "price": 29.99
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Cloud Services",
+        "description": "Scalable cloud infrastructure solutions",
+        "items": [
+          {
+            "id": 3,
+            "title": "Cloud Storage",
+            "description": "Secure and scalable storage solution",
+            "price": 9.99
+          },
+          {
+            "id": 4,
+            "title": "Cloud Computing",
+            "description": "High-performance computing resources",
+            "price": 49.99
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Security Suite",
+        "description": "Complete security and monitoring tools",
+        "items": [
+          {
+            "id": 5,
+            "title": "Security Scanner",
+            "description": "Automated vulnerability detection",
+            "price": 39.99
+          },
+          {
+            "id": 6,
+            "title": "Access Manager",
+            "description": "Role-based access control system",
+            "price": 24.99
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Analytics Platform",
+        "description": "Data analytics and visualization tools",
+        "items": [
+          {
+            "id": 7,
+            "title": "Data Dashboard",
+            "description": "Real-time data visualization",
+            "price": 34.99
+          },
+          {
+            "id": 8,
+            "title": "Report Builder",
+            "description": "Custom report generation tool",
+            "price": 29.99
+          }
+        ]
+      }
+    ]
+  },
+  "customerSeries": {
+    "title": "Explore Customer Series",
+    "description": "Discover our customer success stories and case studies",
+    "series": [
+      {
+        "id": 1,
+        "category": "Enterprise",
+        "description": "Large-scale enterprise transformations",
+        "stories": [
+          {
+            "id": 1,
+            "company": "TechCorp Inc.",
+            "industry": "Technology",
+            "description": "How TechCorp increased productivity by 40%",
+            "caseStudyUrl": "/case-studies/techcorp"
+          },
+          {
+            "id": 2,
+            "company": "Global Finance",
+            "industry": "Finance",
+            "description": "Transforming financial operations with our platform",
+            "caseStudyUrl": "/case-studies/global-finance"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "category": "Startup",
+        "description": "Fast-growing startup success stories",
+        "stories": [
+          {
+            "id": 3,
+            "company": "StartupXYZ",
+            "industry": "E-commerce",
+            "description": "From 0 to 1M users in 6 months",
+            "caseStudyUrl": "/case-studies/startupxyz"
+          },
+          {
+            "id": 4,
+            "company": "InnovateLab",
+            "industry": "Healthcare",
+            "description": "Revolutionizing patient care with digital solutions",
+            "caseStudyUrl": "/case-studies/innovatelab"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "category": "Government",
+        "description": "Public sector digital transformations",
+        "stories": [
+          {
+            "id": 5,
+            "company": "Federal Agency X",
+            "industry": "Government",
+            "description": "Modernizing citizen services delivery",
+            "caseStudyUrl": "/case-studies/federal-agency"
+          },
+          {
+            "id": 6,
+            "company": "State Department Y",
+            "industry": "Government",
+            "description": "Digital transformation in public services",
+            "caseStudyUrl": "/case-studies/state-dept"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "category": "Education",
+        "description": "Educational institution success stories",
+        "stories": [
+          {
+            "id": 7,
+            "company": "University ABC",
+            "industry": "Education",
+            "description": "Enhancing remote learning capabilities",
+            "caseStudyUrl": "/case-studies/university-abc"
+          },
+          {
+            "id": 8,
+            "company": "School District Z",
+            "industry": "Education",
+            "description": "Implementing district-wide digital platform",
+            "caseStudyUrl": "/case-studies/school-district"
+          }
+        ]
+      }
+    ]
+  },
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "role": "user"
+    },
+    {
+      "id": "a244",
+      "firstName": "asd",
+      "lastName": "asd",
+      "email": "admin@admin.com",
+      "phone": "123124141241",
+      "company": "asd",
+      "rank": "c-level",
+      "jobTitle": "asd",
+      "selectedItems": [
+        1,
+        5,
+        3,
+        4
+      ],
+      "selectedCategories": [],
+      "submissionType": "ecosystem",
+      "timestamp": "2025-09-10T22:12:15.150Z"
+    },
+    {
+      "id": "b2f6",
+      "firstName": "asd",
+      "lastName": "asd",
+      "email": "admin@admin.com",
+      "phone": "123124141241",
+      "company": "asd",
+      "rank": "c-level",
+      "jobTitle": "asd",
+      "selectedItems": [
+        1,
+        5,
+        3,
+        4
+      ],
+      "selectedCategories": [],
+      "submissionType": "ecosystem",
+      "timestamp": "2025-09-10T22:12:17.403Z"
+    },
+    {
+      "id": "51c1",
+      "firstName": "asd",
+      "lastName": "asd",
+      "email": "admin@admin.com",
+      "phone": "123124141241",
+      "company": "asd",
+      "rank": "c-level",
+      "jobTitle": "asd",
+      "selectedItems": [
+        1,
+        5,
+        3,
+        4
+      ],
+      "selectedCategories": [],
+      "submissionType": "ecosystem",
+      "timestamp": "2025-09-10T22:12:18.309Z"
+    },
+    {
+      "id": "69ee",
+      "firstName": "asd",
+      "lastName": "asd",
+      "email": "admin@admin.com",
+      "phone": "123124141241",
+      "company": "asd",
+      "rank": "c-level",
+      "jobTitle": "asd",
+      "selectedItems": [
+        1,
+        5,
+        3,
+        4
+      ],
+      "selectedCategories": [],
+      "submissionType": "ecosystem",
+      "timestamp": "2025-09-10T22:12:18.917Z"
+    },
+    {
+      "id": "de38",
+      "firstName": "asd",
+      "lastName": "asd",
+      "email": "asd@gmail.com",
+      "phone": "987123785",
+      "company": "asd",
+      "rank": "c-level",
+      "jobTitle": "asd",
+      "selectedItems": [
+        1,
+        5,
+        3,
+        7
+      ],
+      "selectedCategories": [
+        1
+      ],
+      "submissionType": "ecosystem",
+      "timestamp": "2025-09-10T22:14:42.325Z"
+    },
+    {
+      "id": "b77b",
+      "firstName": "asd",
+      "lastName": "asd",
+      "email": "asd@gmail.com",
+      "phone": "123124141241",
+      "company": "aasd",
+      "rank": "vp",
+      "jobTitle": "asd",
+      "selectedItems": [
+        2,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selectedCategories": [
+        1
+      ],
+      "submissionType": "ecosystem",
+      "timestamp": "2025-09-10T22:25:34.694Z"
+    },
+    {
+      "id": "922d",
+      "firstName": "asd",
+      "lastName": "asd",
+      "email": "admin@admin.com",
+      "phone": "987123785",
+      "company": "asd",
+      "rank": "vp",
+      "jobTitle": "asd",
+      "selectedItems": [
+        1,
+        5,
+        7,
+        4,
+        6
+      ],
+      "selectedCategories": [
+        1
+      ],
+      "submissionType": "ecosystem",
+      "timestamp": "2025-09-10T22:29:26.626Z"
+    },
+    {
+      "id": "fc84",
+      "firstName": "as",
+      "lastName": "asd",
+      "email": "asd@gmail.com",
+      "phone": "987123785",
+      "company": "asd",
+      "rank": "c-level",
+      "jobTitle": "asd",
+      "selectedItems": [
+        3
+      ],
+      "selectedCategories": [
+        2
+      ],
+      "submissionType": "ecosystem",
+      "timestamp": "2025-09-10T22:30:21.169Z"
+    },
+    {
+      "id": "0af0",
+      "firstName": "asd",
+      "lastName": "asd",
+      "email": "admin@admin.com",
+      "phone": "987123785",
+      "company": "asd",
+      "rank": "c-level",
+      "jobTitle": "asd",
+      "selectedItems": [
+        1,
+        5,
+        2,
+        6,
+        7
+      ],
+      "selectedCategories": [
+        1
+      ],
+      "submissionType": "ecosystem",
+      "timestamp": "2025-09-10T22:36:06.090Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Product A",
+      "category": "ecosystem",
+      "price": 99.99,
+      "inStock": true
+    },
+    {
+      "id": "2",
+      "name": "Product B",
+      "category": "series",
+      "price": 149.99,
+      "inStock": true
+    }
+  ]
+}

@@ -1,7 +1,1320 @@
 @import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   min-height: 100vh;
+  background: #101924;
 }
-.homePage{
+
+.homePage {
   background-image: url("./assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerButton {
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #D34120;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.centerButton:hover {
+  background-color: #B8341C;
+}
+
+.choosePath {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 40px;
+  background: #101924;
+}
+
+.pathCard {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 350px;
+}
+
+.pathCard h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.pathCard p {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.pathButton {
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pathCard:first-child .pathButton {
+  background-color: #D34120;
+  color: white;
+}
+
+.pathCard:first-child .pathButton:hover {
+  background-color: #B8341C;
+}
+
+.pathCard:last-child .pathButton {
+  background-color: #D34120;
+  color: white;
+}
+
+.pathCard:last-child .pathButton:hover {
+  background-color: #B8341C;
+}
+
+.loadingMessage, .errorMessage {
+  background: white;
+  padding: 20px 40px;
+  border-radius: 8px;
+  font-size: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.errorMessage {
+  color: #ef4444;
+  border: 2px solid #fee2e2;
+}
+
+.detailPage {
+  min-height: 100vh;
+  background: #101924;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.detailContent {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.leftSection {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pathNumber {
+  font-size: 80px;
+  font-weight: bold;
+  color: #667eea;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.detailTitle {
+  font-size: 36px;
+  color: #1f2937;
+  margin: 0;
+}
+
+.rightSection {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f9fafb;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  background: #e5e7eb;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.detailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detailDescription {
+  font-size: 18px;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.continueButton {
+  padding: 14px 36px;
+  font-size: 18px;
+  font-weight: 600;
+  background: #D34120;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.continueButton:hover {
+  background: #B8341C;
+  transform: translateY(-2px);
+}
+
+.categoriesPage {
+  height: 100vh;
+  background: #101924;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.categoriesHeader {
+  text-align: center;
+  margin-bottom: 30px;
+  flex-shrink: 0;
+}
+
+.categoriesHeader h1 {
+  font-size: 36px;
+  color: #1f2937;
+}
+
+.categoriesContainer {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.categoryCard {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  min-height: 220px;
+  height: fit-content;
+  cursor: pointer;
+  border: 3px solid transparent;
+  position: relative;
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: #e5e7eb;
+}
+
+.categoryCard.selected {
+  border-color: #3b82f6;
+  background: #f0f9ff;
+  transform: translateY(-3px);
+}
+
+.categoryCard.selected:hover {
+  border-color: #2563eb;
+}
+
+.categoryCardContent {
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.categoryName {
+  font-size: 24px;
+  color: #1f2937;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.categoryDescription {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.selectedIndicator {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #D34120;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.categoryActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-shrink: 0;
+}
+
+.nextButton {
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #D34120;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nextButton:hover:not(:disabled) {
+  background: #B8341C;
+  transform: translateY(-2px);
+}
+
+.nextButton:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.backButton {
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #D34120;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #D34120;
+}
+
+.elementsPage {
+  min-height: 100vh;
+  background: #101924;
+  padding: 40px;
+}
+
+.elementsHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.elementsHeader h1 {
+  font-size: 36px;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.elementsHeader p {
+  font-size: 18px;
+  color: #6b7280;
+}
+
+.elementsContainer {
+  width: 100%;
+}
+
+.elementsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  height: 466px;
+  overflow-y: auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.elementCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: transform 0.3s ease;
+  border-left: 4px solid #3b82f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.elementCard:hover {
+  transform: translateY(-3px);
+}
+
+.elementCard:hover .elementCheckbox {
+  opacity: 1;
+}
+
+.elementTitle {
+  font-size: 20px;
+  color: #1f2937;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.elementDescription {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.elementPrice {
+  font-size: 18px;
+  color: #059669;
+  font-weight: bold;
+}
+
+.elementIndustry {
+  font-size: 14px;
+  color: #8b5cf6;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.elementCardContent {
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.learnMoreButton {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #D34120;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.learnMoreButton:hover {
+  background: #B8341C;
+  transform: translateY(-1px);
+}
+
+.drawerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50vw;
+  background: white;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.drawerHeader {
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+}
+
+.drawerHeader h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #1f2937;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.closeButton:hover {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+.drawerContent {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.drawerTitle {
+  font-size: 20px;
+  color: #1f2937;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.drawerIndustry {
+  font-size: 14px;
+  color: #8b5cf6;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.drawerDescription {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.drawerPrice {
+  font-size: 18px;
+  color: #059669;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.drawerDetails {
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+.drawerDetails h4 {
+  margin: 0 0 10px 0;
+  color: #1f2937;
+  font-size: 16px;
+}
+
+.drawerDetails ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.drawerDetails li {
+  color: #4b5563;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.elementCheckbox {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 1;
+  z-index: 10;
+}
+
+.elementCheckbox:hover {
+  border-color: #3b82f6;
+}
+
+.elementCheckbox span {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.elementCard.selectedElement {
+  border-color: #3b82f6;
+  background: #f0f9ff;
+}
+
+.elementCard.selectedElement .elementCheckbox {
+  background: #D34120;
+  border-color: #3b82f6;
+}
+
+.elementsActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.formPage {
+  min-height: 100vh;
+  background: #101924;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.formContainer {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+.formLeft {
+  flex: 1;
+  padding: 60px;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formLeft h1 {
+  font-size: 36px;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.formLeft p {
+  font-size: 18px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.formDescription h3 {
+  font-size: 20px;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.formDescription ul {
+  list-style: none;
+  padding: 0;
+}
+
+.formDescription li {
+  color: #4b5563;
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.formDescription li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+.formRight {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formRow {
+  display: flex;
+  gap: 15px;
+}
+
+.formRow input,
+.formRow select {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.formRow input:focus,
+.formRow select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.formRow:nth-child(2) input,
+.formRow:nth-child(3) input,
+.formRow:nth-child(4) input {
+  width: 100%;
+}
+
+.submitButton {
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  background: #D34120;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: #B8341C;
+  transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.progressPage {
+  height: 100vh;
+  background: #101924;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.progressContainer {
+  text-align: center;
+  color: white;
+  max-width: 500px;
+  width: 100%;
+}
+
+.circularContainer {
+  position: relative;
+  width: 599.21px;
+  height: 599.21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circlePerimeter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 599.21px;
+  height: 599.21px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.centerLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.logoImage {
+  margin-bottom: 10px;
+}
+
+.logoImg {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.logoText {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1f2937;
+  line-height: 1.2;
+}
+
+.elementsCircle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.circularElement {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  width: 159px;
+  margin-left: -79.5px;
+  margin-top: -30px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.circularElement:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.circularElement.selected {
+  opacity: 1;
+  border-color: #3b82f6;
+  background: #f0f9ff;
+  transform: scale(1.05);
+}
+
+.circularElement .elementTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.circularElement .elementPrice {
+  font-size: 11px;
+  color: #059669;
+  font-weight: bold;
+}
+
+.circularElement .elementIndustry {
+  font-size: 10px;
+  color: #8b5cf6;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.progressInfo {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+}
+
+.selectedCount {
+  font-size: 16px;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.completionPage {
+  height: 100vh;
+  background: #101924;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.centerCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.circularElement.highlighted {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.95);
+  border: 3px solid #10b981;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.circularElement.dimmed {
+  opacity: 0.4;
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.circularElement {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  width: 159px;
+  height: 159px;
+  margin-left: -79.5px;
+  margin-top: -79.5px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.circularElement .elementTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 3px;
+  line-height: 1.1;
+}
+
+.circularElement .elementPrice {
+  font-size: 10px;
+  color: #059669;
+  font-weight: bold;
+}
+
+.circularElement .elementIndustry {
+  font-size: 9px;
+  color: #8b5cf6;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.completionInfo {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+}
+
+.completionInfo h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.completionInfo p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.progressContainer h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.progressContainer p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.progressBar {
+  width: 100%;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #D34120, #B8341C);
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.progressNumber {
+  font-size: 72px;
+  font-weight: bold;
+  margin: 40px 0;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.completionMessage {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.completionMessage h2 {
+  font-size: 28px;
+  color: #10b981;
+  margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nextButtonBottomRight {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #D34120;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.nextButtonBottomRight:hover {
+  background: #B8341C;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Map Page Styles */
+.mapPage {
+  min-height: 100vh;
+  background: #101924;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mapHeader {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.mapHeader h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.mapHeader p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.mapContainer {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+}
+
+.usMap {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+
+.mapText {
+  font-size: 24px;
+  font-weight: 600;
+  fill: #374151;
+}
+
+.stateMarker {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stateMarker:hover {
+  r: 12;
+  fill: #1d4ed8;
+}
+
+/* Go Back Button */
+.goBackButton {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background: #D34120;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.goBackButton:hover {
+  background: #B8341C;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* Final view state - disable interaction */
+.circularElement.finalView {
+  cursor: default;
+  pointer-events: auto;
+}
+
+.circularElement.finalView:hover {
+  transform: rotate(0deg) translateY(-299.605px) rotate(0deg);
+  opacity: 1;
+}
+
+/* Ecosystem Completion Page */
+.ecosystemCompletionPage {
+  min-height: 100vh;
+  background: #101924;
+  padding: 40px;
+  color: white;
+}
+
+.completionHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.completionHeader h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.completionHeader p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.selectedItemsList {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selectedItemCard {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.itemInfo {
+  flex: 1;
+}
+
+.itemTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.itemDescription {
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.itemPrice {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fbbf24;
+}
+
+.pricingSummary {
+  max-width: 400px;
+  margin: 0 auto 40px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.totalPriceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.totalLabel {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.totalPrice {
+  font-size: 32px;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.pricingNote {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.completionActions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contactSalesButton,
+.downloadQuoteButton {
+  flex: 1;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contactSalesButton {
+  background: #10b981;
+  color: white;
+}
+
+.contactSalesButton:hover {
+  background: #B8341C;
+  transform: translateY(-2px);
+}
+
+.downloadQuoteButton {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.downloadQuoteButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
 }
